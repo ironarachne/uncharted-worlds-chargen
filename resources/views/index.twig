@@ -11,10 +11,10 @@
         <div class="columns">
             <div class="column">
                 <section class="section">
-                    <p>{{ character.origin.name }} {{ character.careerOne.name }} {{ character.careerTwo.name }}</p>
                     <div class="box">
                         <em>Name</em>
                     </div>
+                    <h2 class="title is-2 has-text-centered">{{ character.origin.name }} {{ character.careerOne.name }} {{ character.careerTwo.name }}</h2>
                     <h3 class="title is-3">Description</h3>
                     {% for descriptor in character.descriptors %}
                         <span>{{ descriptor }}{% if not loop.last %}, {% endif %}</span>
