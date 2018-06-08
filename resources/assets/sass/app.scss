@@ -1,0 +1,54 @@
+
+
+@font-face {
+    font-family: 'alegreya';
+    src: url('../fonts/alegreya-bold-webfont.woff2') format('woff2'),
+    url('../fonts/alegreya-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'alegreya';
+    src: url('../fonts/alegreya-bolditalic-webfont.woff2') format('woff2'),
+    url('../fonts/alegreya-bolditalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'alegreya';
+    src: url('../fonts/alegreya-italic-webfont.woff2') format('woff2'),
+    url('../fonts/alegreya-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'alegreya';
+    src: url('../fonts/alegreya-regular-webfont.woff2') format('woff2'),
+    url('../fonts/alegreya-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'arconregular';
+    src: url('../fonts/arcon-regular-webfont.woff2') format('woff2'),
+    url('../fonts/arcon-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$family-primary: 'alegreya';
+$family-sans-serif: 'arconregular';
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $family-sans-serif;
+}
+
+@import './node_modules/bulma/bulma.sass';
