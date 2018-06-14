@@ -12,3 +12,5 @@
 */
 
 Route::get( '/', 'HomeController@index' )->name( 'home' );
+Route::get( '/character/', 'HomeController@characterGenerate' )->name( 'character_generate' );
+Route::get( '/character/{guid}', 'HomeController@character' )->name( 'character' );

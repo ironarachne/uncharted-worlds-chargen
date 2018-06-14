@@ -1,0 +1,90 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+    <div class="column">
+        <section class="section">
+            <div class="box">
+                <em>Name</em>
+            </div>
+            <h2 class="title is-2 has-text-centered">{{ character.origin.name }} {{ character.careerOne.name }} {{ character.careerTwo.name }}</h2>
+            <h3 class="title is-3">Description</h3>
+            {% for descriptor in character.descriptors %}
+                <span>{{ descriptor }}{% if not loop.last %}, {% endif %}</span>
+            {% endfor %}
+        </section>
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Mettle</p>
+                    <p class="title">{{ character.mettle }}</p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Physique</p>
+                    <p class="title">{{ character.physique }}</p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Influence</p>
+                    <p class="title">{{ character.influence }}</p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Expertise</p>
+                    <p class="title">{{ character.expertise }}</p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Interface</p>
+                    <p class="title">{{ character.interface }}</p>
+                </div>
+            </div>
+
+        </nav>
+        <section class="section">
+            <h3 class="title is-3">Skills</h3>
+            {% for skill in character.skills %}
+                <div class="box">
+                    <h4 class="title is-4">{{ skill.name }}</h4>
+                    <p>
+                        {{ skill.text|nl2br }}
+                    </p>
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+    <div class="column">
+        <section class="section">
+            <h3 class="title is-3">Assets</h3>
+            <div class="box">
+                <h4 class="title is-4">Workspace: {{ character.workspace.name }}</h4>
+                <p>{{ character.workspace.text }}</p>
+            </div>
+            {% for asset in character.assets %}
+                <div class="box">
+                    <h4 class="title is-4">{{ asset.name }}</h4>
+                    <p>{{ asset.description }}</p>
+                    <p><strong>Type:</strong> {{ asset.type }}</p>
+                    {% if asset.upgrades|length > 0 %}
+                        <hr>
+                        <h5 class="title is-5">Upgrades</h5>
+                        <ul>
+                            {% for upgrade in asset.upgrades %}
+                                <li><strong>{{ upgrade.name }}:</strong> {{ upgrade.effect }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </section>
+        <section class="section">
+            <h3 class="title is-3">Advancement</h3>
+            <p><em>All characters mark XP the first time...</em></p>
+            <p>- {{ character.advancement }}</p>
+        </section>
+    </div>
+{% endblock %}
